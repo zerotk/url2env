@@ -29,7 +29,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.9',
     ],
-    keywords="heroku postgresql shell",
+    keywords="postgresql shell environment",
 
     packages=find_packages(),
     entry_points={
