@@ -1,20 +1,13 @@
-.PHONY: all clean
+.RECIPEPREFIX = >
+.PHONY: all clean build upload
 
 all: dist
 
 clean:
-	rm -rf build dist url2env.egg-info
+> git clean -xdf
 
-dist: env/bin/python
-	env/bin/python setup.py bdist_wheel --universal
+build:
+> python setup.py build sdist
 
-upload: dist env/bin/twine
-	env/bin/twine upload dist/*
-
-env:
-	virtualenv env
-
-env/bin/python: env
-
-env/bin/twine: env
-	env/bin/pip install twine
+upload:
+> twine upload -u $PYPI_USERNAME -p $PYPI_PASSWORD dist/*

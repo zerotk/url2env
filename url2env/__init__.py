@@ -4,12 +4,6 @@ Transforms database URLs into shell environment variables.
 """
 import click
 
-# SCHEMES = (
-#     "postgresql",
-#     "postgres",
-#     "postgis",
-#     "psql",
-# )
 
 @click.command()
 @click.argument("database_url")
