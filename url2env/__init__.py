@@ -10,16 +10,21 @@ import click
 @click.option("--prefix", default="PG")
 @click.option("--export", is_flag=True)
 @click.option("--engine", is_flag=True)
-def main(database_url, prefix, export, engine):
+@click.option("--host-key", default="HOST")
+@click.option("--port-key", default="PORT")
+@click.option("--user-key", default="USER")
+@click.option("--password-key", default="PASSWORD")
+@click.option("--database-key", default="DATABASE")
+def main(database_url, prefix, export, engine, host_key, port_key, user_key, password_key, database_key):
     from urllib.parse import urlparse
 
     def to_envs(url):
         result = [
-            ("HOST", url.hostname),
-            ("PORT", url.port),
-            ("USER", url.username),
-            ("PASSWORD", url.password),
-            ("DATABASE", url.path[1:]),
+            (host_key, url.hostname),
+            (port_key, url.port),
+            (user_key, url.username),
+            (password_key, url.password),
+            (database_key, url.path[1:]),
         ]
         if engine:
             result.insert(0, ("ENGINE", url.scheme))
