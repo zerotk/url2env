@@ -31,7 +31,10 @@ setup(
     install_requires=[
         "click",
     ],
-    setup_requires=["setuptools_scm"],
+    setup_requires=[
+        "setuptools_scm<7.0.0;python_version<'3.6.10'",
+        "setuptools_scm;python_version>='3.6.10'",
+    ],
     tests_require=[],
     license="MIT",
 )
