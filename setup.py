@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os.path
+import io
 from setuptools import setup, find_packages
 
 
@@ -11,7 +12,7 @@ setup(
     url="https://github.com/zerotk/url2env",
     description="Produces env vars from Heroku-style database URLs",
     long_description_content_type="text/markdown",
-    long_description=open(
+    long_description=io.open(
         os.path.join(os.path.abspath(os.path.dirname(__file__)), "README.md"),
         encoding="utf-8",
     ).read(),
