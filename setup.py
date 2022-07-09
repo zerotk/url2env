@@ -33,8 +33,7 @@ setup(
         "click",
     ],
     setup_requires=[
-        "setuptools_scm<7.0.0;python_version<'3.7'",
-        "setuptools_scm;python_version>='3.7'",
+        "setuptools_scm<7.0.0",  # Latest version compatible with Python 2.
     ],
     tests_require=[],
     license="MIT",
