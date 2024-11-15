@@ -10,4 +10,4 @@ build:
 > python setup.py build sdist
 
 upload:
-> twine upload -u $PYPI_USERNAME -p $PYPI_PASSWORD dist/*
+> twine upload -u $(PYPI_USERNAME) -p $(PYPI_PASSWORD) dist/*
