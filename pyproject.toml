@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zerotk.url2env"
-version = "1.3.5"
+version = "1.3.7"
 description = "Command line tool to split database urls into multiple environment variables."
 authors = ["Alexandre Andrade <kaniabi@gmail.com>"]
 license = "MIT"
